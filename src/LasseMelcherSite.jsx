@@ -209,7 +209,7 @@ export default function LasseMelcherSite() {
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="relative">
             <img
-              src="/portrait.jpg"
+              src="portrait.jpg"
               alt="Lasse Melcher - Senior Analytics Engineer"
               className="w-full aspect-square object-cover rounded-3xl border shadow-sm"
             />
