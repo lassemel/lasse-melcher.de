@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lasse-melcher.de/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow common bot traps and non-essential paths
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /*.log$
+Disallow: /*.json$
+
+# Allow all image types
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
