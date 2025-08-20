@@ -269,10 +269,7 @@ export default function LasseMelcherSite() {
                     <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
                     <span>Led analytics engineering transformations with dbt and modern data stacks</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
-                    <span>Architected cloud-native pipelines on GCP, AWS, and Databricks</span>
-                  </div>
+
                   <div className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
                     <span>Implemented CI/CD for data teams with Docker and GitLab automation</span>
