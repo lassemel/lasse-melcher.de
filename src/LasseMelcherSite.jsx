@@ -24,7 +24,7 @@ const skills = [
   "Analytics Engineering (dbt)",
   "SQL & Data Modeling",
   "Python & PySpark",
-  "Dagster Orchestration",
+  "Data Orchestration",
   "Docker & CI/CD (GitLab)",
   "Cloud: GCP, AWS, Databricks",
   "Data Warehousing & Lakes",
@@ -47,7 +47,7 @@ const services = [
   {
     icon: <Cog className="w-5 h-5" aria-hidden />,
     title: "Orchestration & Ops",
-    blurb: "Dagster-first pipelines, observability, and reliable deployments.",
+    blurb: "Data pipeline orchestration, observability, and reliable deployments.",
   },
   {
     icon: <GitBranch className="w-5 h-5" aria-hidden />,
@@ -72,21 +72,21 @@ const projects = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
     tags: ["dbt", "BigQuery", "Modeling"],
     summary:
-      "Built a normalized data layer for insurance contracts with complex date logic, JSON extraction, and SLA tracking for reliable business KPIs.",
+      "Developed a comprehensive data foundation for insurance operations that handles complex business rules, extracts insights from unstructured data, and tracks performance metrics to ensure reliable reporting and decision-making.",
   },
   {
-    title: "Dagster Orchestrator CI/CD",
+    title: "Data Orchestration & CI/CD",
     image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
-    tags: ["Dagster", "Docker", "GitLab"],
+    tags: ["Data Orchestration", "Docker", "GitLab"],
     summary:
-      "Containerized orchestration with GitLab pipelines for build/test/deploy across dev→prod, plus observability.",
+      "Automated data pipeline management with continuous integration and deployment across development and production environments, including real-time monitoring and alerting.",
   },
   {
     title: "Ticket System API Integration",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
     tags: ["Ingestion", "APIs", "Data Quality"],
     summary:
-      "Created a robust landing zone for open source ticket system data with schema contracts, incremental updates, and data validation.",
+      "Designed and implemented a comprehensive data integration solution for customer support systems, including API development, automated data ingestion, and quality assurance processes.",
   },
 ];
 

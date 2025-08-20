@@ -25,7 +25,7 @@ const skills = [
   "Analytics Engineering (dbt)",
   "SQL & Data Modeling",
   "Python & PySpark",
-  "Dagster Orchestration",
+  "Data Orchestration",
   "Docker & CI/CD (GitLab)",
   "Cloud: GCP, AWS, Databricks",
   "Data Warehousing & Lakes",
@@ -48,7 +48,7 @@ const services = [
   {
     icon: <Cog className="w-5 h-5" aria-hidden />,
     title: "Orchestration & Ops",
-    blurb: "Dagster-first pipelines, observability, and reliable deployments.",
+    blurb: "Data pipeline orchestration, observability, and reliable deployments.",
   },
   {
     icon: <GitBranch className="w-5 h-5" aria-hidden />,
@@ -73,21 +73,21 @@ const projects = [
     image: "https://placehold.co/1200x700/png",
     tags: ["dbt", "BigQuery", "Modeling"],
     summary:
-      "Built a normalized layer for pet insurance contracts (dates, JSON extraction, SLAs), enabling reliable KPIs.",
+      "Developed a comprehensive data foundation for insurance operations that handles complex business rules, extracts insights from unstructured data, and tracks performance metrics to ensure reliable reporting and decision-making.",
   },
   {
-    title: "Dagster Orchestrator CI/CD",
+    title: "Data Orchestration & CI/CD",
     image: "https://placehold.co/1200x700/png",
-    tags: ["Dagster", "Docker", "GitLab"],
+    tags: ["Data Orchestration", "Docker", "GitLab"],
     summary:
-      "Containerized orchestration with GitLab pipelines for build/test/deploy across dev→prod, plus observability.",
+      "Automated data pipeline management with continuous integration and deployment across development and production environments, including real-time monitoring and alerting.",
   },
   {
     title: "Zammad API Landing Zone",
     image: "https://placehold.co/1200x700/png",
     tags: ["Ingestion", "APIs", "Data Quality"],
     summary:
-      "Created a robust landing zone for Zammad ticket data with schema contracts and incremental updates.",
+      "Designed and implemented a comprehensive data integration solution for customer support systems, including API development, automated data ingestion, and quality assurance processes.",
   },
 ];
 
