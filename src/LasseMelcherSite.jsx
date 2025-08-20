@@ -201,9 +201,9 @@ export default function LasseMelcherSite() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#contact"><Button className="rounded-2xl">Work with me<ArrowRight className="ml-2 w-4 h-4"/></Button></a>
-              <a href="/Lasse-Melcher-CV.pdf" download>
+              {/* <a href="/Lasse-Melcher-CV.pdf" download>
                 <Button variant="outline" className="rounded-2xl">Download CV</Button>
-              </a>
+              </a> */}
             </div>
           </motion.div>
 
