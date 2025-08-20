@@ -8,9 +8,9 @@ import { Badge } from "@/components/ui/badge";
 // ---- Editable content (pulls from your bio) ---------------------------------
 const NAME = "Lasse Melcher";
 const TAGLINE = "From data to decisions — creating impact, with you";
-const ROLE = "Senior Analytics Engineer";
+const ROLE = "Data Expert";
 const CURRENT_COMPANY = "";
-const LOCATION = "Berlin · Remote";
+const LOCATION = "Berlin";
 const YEARS_EXPERIENCE = 10; // since 2015
 
 const CONTACT = {
@@ -92,10 +92,10 @@ const projects = [
 
 const experience = [
   {
-    role: "Senior Analytics Engineer",
+    role: "Data Expert",
     company: "Cleos Welt",
     period: "Oct 2024 – Present",
-    place: "Berlin · Remote",
+    place: "Berlin",
     points: [
       "Leading the analytics engineering roadmap and data quality initiatives.",
       "Owning dbt models, CI/CD, and stakeholder-facing semantic layers.",
@@ -210,7 +210,7 @@ export default function LasseMelcherSite() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="relative">
             <img
               src="portrait.jpg"
-              alt="Lasse Melcher - Senior Analytics Engineer"
+              alt="Lasse Melcher - Data Expert"
               className="w-full aspect-square object-cover rounded-3xl border shadow-sm"
             />
           </motion.div>
@@ -350,8 +350,8 @@ export default function LasseMelcherSite() {
             <h2 className="text-2xl md:text-3xl font-semibold">Let’s build something</h2>
             <p className="text-zinc-600 mt-3">Tell me about your data challenges and goals. I’ll reply promptly with ideas and next steps.</p>
             <div className="mt-6 space-y-2 text-sm">
-              <div className="flex items-center gap-2"><Mail className="w-4 h-4"/> <a className="hover:font-bold transition-all" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></div>
               <div className="flex items-center gap-2"><MapPin className="w-4 h-4"/> <span>{CONTACT.city}</span></div>
+              <div className="flex items-center gap-2"><Mail className="w-4 h-4"/> <a className="hover:font-bold transition-all" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></div>
               <div className="flex items-center gap-2"><Github className="w-4 h-4"/> <a className="hover:font-bold transition-all" href={CONTACT.github} target="_blank" rel="noreferrer">GitHub</a></div>
               <div className="flex items-center gap-2"><Linkedin className="w-4 h-4"/> <a className="hover:font-bold transition-all" href={CONTACT.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></div>
             </div>
