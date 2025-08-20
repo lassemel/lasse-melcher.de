@@ -8,9 +8,9 @@ import { Badge } from "@/components/ui/badge";
 // ---- Editable content (pulls from your bio) ---------------------------------
 const NAME = "Lasse Melcher";
 const TAGLINE = "From data to decisions — creating impact, with you";
-const ROLE = "Senior Analytics Engineer";
+const ROLE = "Data Expert";
 const CURRENT_COMPANY = "Cleos Welt";
-const LOCATION = "Berlin · Remote";
+const LOCATION = "Berlin";
 const YEARS_EXPERIENCE = 10; // since 2011
 
 const CONTACT = {
@@ -93,10 +93,10 @@ const projects = [
 
 const experience = [
   {
-    role: "Senior Analytics Engineer",
+    role: "Data Expert",
     company: "Cleos Welt",
     period: "Oct 2024 – Present",
-    place: "Berlin · Remote",
+    place: "Berlin",
     points: [
       "Leading the analytics engineering roadmap and data quality initiatives.",
       "Owning dbt models, CI/CD, and stakeholder-facing semantic layers.",
