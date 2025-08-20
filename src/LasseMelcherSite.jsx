@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Database, LineChart, Cog, Cloud, Boxes, GitBranch, ShieldCheck, Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Database, LineChart, Cog, Cloud, Boxes, GitBranch, ShieldCheck, Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,11 +14,10 @@ const LOCATION = "Berlin · Remote";
 const YEARS_EXPERIENCE = 14; // since 2011
 
 const CONTACT = {
-  email: "hello@example.com", // TODO: replace with your email
-  phone: "+49 000 0000000", // TODO: optional phone
+  email: "contact@lasse-melcher.de",
   city: "Berlin, Germany",
-  github: "https://github.com/", // TODO: your GitHub
-  linkedin: "https://www.linkedin.com/in/", // TODO: your LinkedIn
+  github: "https://github.com/lassemel",
+  linkedin: "https://www.linkedin.com/in/lasse-melcher-a2768825a/",
 };
 
 const skills = [
@@ -69,25 +68,25 @@ const services = [
 
 const projects = [
   {
-    title: "Pet Insurance Contracts: dbt + BigQuery",
-    image: "https://placehold.co/1200x700/png",
+    title: "Data Platform: dbt + BigQuery",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
     tags: ["dbt", "BigQuery", "Modeling"],
     summary:
-      "Built a normalized layer for pet insurance contracts (dates, JSON extraction, SLAs), enabling reliable KPIs.",
+      "Built a normalized data layer for insurance contracts with complex date logic, JSON extraction, and SLA tracking for reliable business KPIs.",
   },
   {
     title: "Dagster Orchestrator CI/CD",
-    image: "https://placehold.co/1200x700/png",
+    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
     tags: ["Dagster", "Docker", "GitLab"],
     summary:
       "Containerized orchestration with GitLab pipelines for build/test/deploy across dev→prod, plus observability.",
   },
   {
-    title: "Zammad API Landing Zone",
-    image: "https://placehold.co/1200x700/png",
+    title: "Ticket System API Integration",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
     tags: ["Ingestion", "APIs", "Data Quality"],
     summary:
-      "Created a robust landing zone for Zammad ticket data with schema contracts and incremental updates.",
+      "Created a robust landing zone for open source ticket system data with schema contracts, incremental updates, and data validation.",
   },
 ];
 
@@ -210,8 +209,8 @@ export default function LasseMelcherSite() {
 
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="relative">
             <img
-              src="https://placehold.co/900x900/png"
-              alt="Portrait placeholder"
+              src="/portrait.jpg"
+              alt="Lasse Melcher - Senior Analytics Engineer"
               className="w-full aspect-square object-cover rounded-3xl border shadow-sm"
             />
           </motion.div>
@@ -219,13 +218,78 @@ export default function LasseMelcherSite() {
 
         {/* Quick facts */}
         <div className="grid md:grid-cols-3 gap-4 mt-10">
-          {["Data Modeling & Warehousing", "Orchestration & CI/CD", "Cloud-native & Cost-aware"].map((f) => (
-            <Card key={f} className="rounded-3xl">
-              <CardHeader>
-                <CardTitle className="text-base">{f}</CardTitle>
+          {[
+            { title: "Data Modeling & Warehousing", icon: <Database className="w-5 h-5" /> },
+            { title: "Orchestration & CI/CD", icon: <GitBranch className="w-5 h-5" /> },
+            { title: "Cloud-native & Cost-aware", icon: <Cloud className="w-5 h-5" /> }
+          ].map((f) => (
+            <Card key={f.title} className="rounded-3xl">
+              <CardHeader className="flex-row items-center gap-3">
+                <div className="p-2 rounded-xl border">{f.icon}</div>
+                <CardTitle className="text-base">{f.title}</CardTitle>
               </CardHeader>
             </Card>
           ))}
+        </div>
+      </Section>
+
+      {/* About */}
+      <Section id="about" className="py-16 md:py-24">
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">About</h2>
+            <p className="text-zinc-600 leading-relaxed">
+              I'm {NAME}, a {ROLE} based in Berlin. I build minimal, durable data systems that help teams ship
+              decisions faster. My background spans telecom operations, freelancing, and product-led startups —
+              with a focus on dbt modeling, orchestration, and data enablement.
+            </p>
+            <div className="mt-6">
+              <h3 className="font-medium mb-3">Skills</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((s) => (
+                  <Badge key={s} variant="outline" className="rounded-full">{s}</Badge>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <Card className="rounded-3xl">
+              <CardHeader>
+                <CardTitle className="text-base">Key Highlights</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="text-sm space-y-2 text-zinc-600">
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
+                    <span>14+ years building data systems across telecom, startups, and enterprise</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
+                    <span>Led analytics engineering transformations with dbt and modern data stacks</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
+                    <span>Architected cloud-native pipelines on GCP, AWS, and Databricks</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
+                    <span>Implemented CI/CD for data teams with Docker and GitLab automation</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
+                    <span>Enabled self-serve analytics with Power BI and Metabase dashboards</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
+                    <span>Mentored teams on data quality, observability, and best practices</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+
+          </div>
         </div>
       </Section>
 
@@ -274,68 +338,6 @@ export default function LasseMelcherSite() {
         </div>
       </Section>
 
-      {/* About */}
-      <Section id="about" className="py-16 md:py-24">
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">About</h2>
-            <p className="text-zinc-600 leading-relaxed">
-              I’m {NAME}, a {ROLE} based in Berlin. I build minimal, durable data systems that help teams ship
-              decisions faster. My background spans telecom operations, freelancing, and product-led startups —
-              with a focus on dbt modeling, orchestration, and data enablement.
-            </p>
-            <div className="mt-6">
-              <h3 className="font-medium mb-3">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((s) => (
-                  <Badge key={s} variant="outline" className="rounded-full">{s}</Badge>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <Card className="rounded-3xl">
-              <CardHeader>
-                <CardTitle className="text-base">Experience</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {experience.map((e) => (
-                  <div key={e.company} className="text-sm">
-                    <div className="font-medium">{e.role} — {e.company}</div>
-                    <div className="text-zinc-600">{e.period} · {e.place}</div>
-                    <ul className="list-disc ml-4 mt-2 text-zinc-600">
-                      {e.points.map((p, i) => (
-                        <li key={i}>{p}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            <Card className="rounded-3xl">
-              <CardHeader>
-                <CardTitle className="text-base">Education & Certifications</CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm space-y-3">
-                {education.map((ed) => (
-                  <div key={ed.title}>
-                    <div className="font-medium">{ed.title}</div>
-                    <div className="text-zinc-600">{ed.org} · {ed.period}{ed.note ? ` · ${ed.note}` : ""}</div>
-                  </div>
-                ))}
-                <div className="pt-2">
-                  {certifications.map((c) => (
-                    <div key={c.title} className="text-zinc-700">{c.title} · <span className="text-zinc-600">{c.period}</span></div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </Section>
-
       {/* Contact */}
       <Section id="contact" className="py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -344,7 +346,6 @@ export default function LasseMelcherSite() {
             <p className="text-zinc-600 mt-3">Tell me about your data challenges and goals. I’ll reply promptly with ideas and next steps.</p>
             <div className="mt-6 space-y-2 text-sm">
               <div className="flex items-center gap-2"><Mail className="w-4 h-4"/> <a className="underline" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></div>
-              <div className="flex items-center gap-2"><Phone className="w-4 h-4"/> <span>{CONTACT.phone}</span></div>
               <div className="flex items-center gap-2"><MapPin className="w-4 h-4"/> <span>{CONTACT.city}</span></div>
               <div className="flex items-center gap-2"><Github className="w-4 h-4"/> <a className="underline" href={CONTACT.github} target="_blank" rel="noreferrer">GitHub</a></div>
               <div className="flex items-center gap-2"><Linkedin className="w-4 h-4"/> <a className="underline" href={CONTACT.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></div>
