@@ -69,21 +69,21 @@ const services = [
 const projects = [
   {
     title: "Data Platform: dbt + BigQuery",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
+    image: "https://placehold.co/1200x700/6b7280/6b7280",
     tags: ["dbt", "BigQuery", "Modeling"],
     summary:
       "Developed a comprehensive data foundation for insurance operations that handles complex business rules, extracts insights from unstructured data, and tracks performance metrics to ensure reliable reporting and decision-making.",
   },
   {
     title: "Data Orchestration & CI/CD",
-    image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
+    image: "https://placehold.co/1200x700/6b7280/6b7280",
     tags: ["Data Orchestration", "Docker", "GitLab"],
     summary:
       "Automated data pipeline management with continuous integration and deployment across development and production environments, including real-time monitoring and alerting.",
   },
   {
     title: "Ticket System API Integration",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=700&q=80",
+    image: "https://placehold.co/1200x700/6b7280/6b7280",
     tags: ["Ingestion", "APIs", "Data Quality"],
     summary:
       "Designed and implemented a comprehensive data integration solution for customer support systems, including API development, automated data ingestion, and quality assurance processes.",

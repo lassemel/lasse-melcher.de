@@ -70,21 +70,21 @@ const services = [
 const projects = [
   {
     title: "Pet Insurance Contracts: dbt + BigQuery",
-    image: "https://placehold.co/1200x700/png",
+    image: "https://placehold.co/1200x700/6b7280/6b7280",
     tags: ["dbt", "BigQuery", "Modeling"],
     summary:
       "Developed a comprehensive data foundation for insurance operations that handles complex business rules, extracts insights from unstructured data, and tracks performance metrics to ensure reliable reporting and decision-making.",
   },
   {
     title: "Data Orchestration & CI/CD",
-    image: "https://placehold.co/1200x700/png",
+    image: "https://placehold.co/1200x700/6b7280/6b7280",
     tags: ["Data Orchestration", "Docker", "GitLab"],
     summary:
       "Automated data pipeline management with continuous integration and deployment across development and production environments, including real-time monitoring and alerting.",
   },
   {
     title: "Zammad API Landing Zone",
-    image: "https://placehold.co/1200x700/png",
+    image: "https://placehold.co/1200x700/6b7280/6b7280",
     tags: ["Ingestion", "APIs", "Data Quality"],
     summary:
       "Designed and implemented a comprehensive data integration solution for customer support systems, including API development, automated data ingestion, and quality assurance processes.",
