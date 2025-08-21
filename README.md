@@ -10,6 +10,7 @@ A modern, professional website built with React, Vite, and Tailwind CSS, showcas
 - 🔒 HTTPS ready with Docker
 - 🎯 SEO optimized
 - 🌐 Production-ready deployment
+- 🌍 **German & English language support** - Automatic language detection and manual switching
 
 ## Development
 
@@ -95,6 +96,25 @@ For development, the setup generates self-signed certificates automatically. For
 - **Icons**: Lucide React
 - **Deployment**: Docker, Nginx
 - **Build**: Multi-stage Docker build
+
+## Internationalization
+
+The website now supports both **English** and **German** languages:
+
+- **Automatic language detection** based on browser preferences
+- **Language switcher** in the navigation (globe icon)
+- **Persistent language preference** stored in localStorage
+- **Complete content translation** including:
+  - Navigation and UI elements
+  - Hero section and services
+  - About section and skills
+  - Contact forms and placeholders
+  - Footer and all static text
+
+### Language Files
+- `src/lib/translations.js` - Contains all translated content
+- `src/lib/LanguageContext.jsx` - React context for language management
+- `src/components/LanguageSwitcher.jsx` - Language toggle component
 
 ## SEO Features
 
