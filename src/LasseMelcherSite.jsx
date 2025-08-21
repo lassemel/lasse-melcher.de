@@ -4,6 +4,9 @@ import { ArrowRight, Database, LineChart, Cog, Cloud, Boxes, GitBranch, ShieldCh
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useLanguage } from "@/lib/LanguageContext";
+import { getTranslation } from "@/lib/translations";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 // ---- Editable content (pulls from your bio) ---------------------------------
 const NAME = "Lasse Melcher";
@@ -20,49 +23,38 @@ const CONTACT = {
   linkedin: "https://www.linkedin.com/in/lasse-melcher-a2768825a/",
 };
 
-const skills = [
-  "Analytics Engineering (dbt)",
-  "SQL & Data Modeling",
-  "Python & PySpark",
-  "Data Orchestration",
-  "Docker & CI/CD (GitLab)",
-  "Cloud: GCP, AWS, Databricks",
-  "Data Warehousing & Lakes",
-  "Power BI & Metabase",
-  "Data Quality & Enablement",
-  "Linux & Shell Scripting",
-];
+
 
 const services = [
   {
     icon: <Database className="w-5 h-5" aria-hidden />,
-    title: "Modern Data Stack",
-    blurb: "Design pragmatic, scalable data platforms on GCP/AWS/Databricks.",
+    title: "modernDataStack",
+    blurb: "modernDataStack",
   },
   {
     icon: <LineChart className="w-5 h-5" aria-hidden />,
-    title: "Analytics Engineering",
-    blurb: "Model business logic with dbt, enforce quality, and ship trusted metrics.",
+    title: "analyticsEngineering",
+    blurb: "analyticsEngineering",
   },
   {
     icon: <Cog className="w-5 h-5" aria-hidden />,
-    title: "Orchestration & Ops",
-    blurb: "Data pipeline orchestration, observability, and reliable deployments.",
+    title: "orchestration",
+    blurb: "orchestration",
   },
   {
     icon: <GitBranch className="w-5 h-5" aria-hidden />,
-    title: "CI/CD for Data",
-    blurb: "GitLab pipelines for tests, image builds, and environment promotion.",
+    title: "cicd",
+    blurb: "cicd",
   },
   {
     icon: <Cloud className="w-5 h-5" aria-hidden />,
-    title: "Cloud Architecture",
-    blurb: "Secure, cost-aware patterns for warehouses, lakes, and compute.",
+    title: "cloudArchitecture",
+    blurb: "cloudArchitecture",
   },
   {
     icon: <Boxes className="w-5 h-5" aria-hidden />,
-    title: "BI Enablement",
-    blurb: "Self-serve dashboards in Power BI & Metabase with semantic layers.",
+    title: "biEnablement",
+    blurb: "biEnablement",
   },
 ];
 
@@ -164,6 +156,8 @@ const Pill = ({ children }) => (
 
 // ---- Page -------------------------------------------------------------------
 export default function LasseMelcherSite() {
+  const { currentLanguage } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white">
       {/* Nav */}
@@ -171,14 +165,15 @@ export default function LasseMelcherSite() {
         <nav aria-label="Primary" className="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-8 h-14">
           <a href="#home" className="font-semibold tracking-tight">{NAME}</a>
           <div className="hidden md:flex gap-6 text-sm">
-            <a href="#work" className="hover:opacity-70">Work</a>
-            <a href="#services" className="hover:opacity-70">Services</a>
-            <a href="#about" className="hover:opacity-70">About</a>
-            <a href="#contact" className="hover:opacity-70">Contact</a>
+            <a href="#work" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.work')}</a>
+            <a href="#services" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.services')}</a>
+            <a href="#about" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.about')}</a>
+            <a href="#contact" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.contact')}</a>
           </div>
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <a href="#contact" className="hidden md:block">
-              <Button className="rounded-2xl">Let’s talk</Button>
+              <Button className="rounded-2xl">{getTranslation(currentLanguage, 'nav.letsTalk')}</Button>
             </a>
           </div>
         </nav>
@@ -189,18 +184,18 @@ export default function LasseMelcherSite() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <motion.div initial="hidden" animate="show" variants={fade} transition={{ duration: 0.5 }}>
             <div className="inline-flex items-center gap-2 mb-4">
-              <Pill>{ROLE}</Pill>
-              <Pill>{LOCATION}</Pill>
-              <Pill>{YEARS_EXPERIENCE}+ yrs</Pill>
+              <Pill>{getTranslation(currentLanguage, 'hero.role')}</Pill>
+              <Pill>{getTranslation(currentLanguage, 'hero.location')}</Pill>
+              <Pill>{getTranslation(currentLanguage, 'hero.yearsExperience')}</Pill>
             </div>
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
-              Minimal, reliable data systems for real business impact.
+              {getTranslation(currentLanguage, 'hero.title')}
             </h1>
             <p className="mt-4 text-zinc-600 text-lg max-w-2xl">
-              {TAGLINE}
+              {getTranslation(currentLanguage, 'hero.tagline')}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#contact"><Button className="rounded-2xl">Work with me<ArrowRight className="ml-2 w-4 h-4"/></Button></a>
+              <a href="#contact"><Button className="rounded-2xl">{getTranslation(currentLanguage, 'hero.cta')}<ArrowRight className="ml-2 w-4 h-4"/></Button></a>
               {/* <a href="/Lasse-Melcher-CV.pdf" download>
                 <Button variant="outline" className="rounded-2xl">Download CV</Button>
               </a> */}
@@ -219,9 +214,9 @@ export default function LasseMelcherSite() {
         {/* Quick facts */}
         <div className="grid md:grid-cols-3 gap-4 mt-10">
           {[
-            { title: "Data Modeling & Warehousing", icon: <Database className="w-5 h-5" /> },
-            { title: "Orchestration & CI/CD", icon: <GitBranch className="w-5 h-5" /> },
-            { title: "Cloud-native & Cost-aware", icon: <Cloud className="w-5 h-5" /> }
+            { title: getTranslation(currentLanguage, 'hero.quickFacts.dataModeling'), icon: <Database className="w-5 h-5" /> },
+            { title: getTranslation(currentLanguage, 'hero.quickFacts.orchestration'), icon: <GitBranch className="w-5 h-5" /> },
+            { title: getTranslation(currentLanguage, 'hero.quickFacts.cloudNative'), icon: <Cloud className="w-5 h-5" /> }
           ].map((f) => (
             <Card key={f.title} className="rounded-3xl">
               <CardHeader className="flex-row items-center gap-3">
@@ -237,17 +232,17 @@ export default function LasseMelcherSite() {
       <Section id="about" className="py-16 md:py-24">
         <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">About</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">{getTranslation(currentLanguage, 'about.title')}</h2>
             <p className="text-zinc-600 leading-relaxed">
-              I'm Lasse, a Data Expert based in Berlin. I build minimal, cost-effective, and easily maintainable data systems that scale with your business. My approach focuses on helping teams ship decisions faster with reliable, pragmatic solutions.
+              {getTranslation(currentLanguage, 'about.description1')}
             </p>
             <p className="text-zinc-600 leading-relaxed mt-4">
-              My background spans telecom operations, insurance, freelancing, and product-led startups — giving me deep insight into diverse data challenges. I specialize in dbt modeling, modern orchestration, and data enablement that actually works in production.
+              {getTranslation(currentLanguage, 'about.description2')}
             </p>
             <div className="mt-6">
-              <h3 className="font-medium mb-3">Skills</h3>
+              <h3 className="font-medium mb-3">{getTranslation(currentLanguage, 'about.skills')}</h3>
               <div className="flex flex-wrap gap-2">
-                {skills.map((s) => (
+                {getTranslation(currentLanguage, 'about.skillsList').map((s) => (
                   <Badge key={s} variant="outline" className="rounded-full">{s}</Badge>
                 ))}
               </div>
@@ -257,35 +252,16 @@ export default function LasseMelcherSite() {
           <div className="space-y-6">
             <Card className="rounded-3xl">
               <CardHeader>
-                <CardTitle className="text-base">Key Highlights</CardTitle>
+                <CardTitle className="text-base">{getTranslation(currentLanguage, 'about.keyHighlights')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="text-sm space-y-2 text-zinc-600">
-                  <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
-                    <span>10+ years building data systems across telecom, insurance, startups, and enterprise</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
-                    <span>Led analytics engineering transformations with dbt and modern data stacks</span>
-                  </div>
-
-                  <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
-                    <span>Implemented CI/CD for data teams with Docker and GitLab automation</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
-                    <span>Enabled self-serve analytics with Power BI and Metabase dashboards</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
-                    <span>Mentored teams on data quality, observability, and best practices</span>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
-                    <span>Accelerated delivery with state-of-the-art AI tools for code generation and optimization</span>
-                  </div>
+                  {getTranslation(currentLanguage, 'about.highlights').map((highlight, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-2 flex-shrink-0"></div>
+                      <span>{highlight}</span>
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
@@ -298,8 +274,8 @@ export default function LasseMelcherSite() {
       {/* Selected Work / Projects */}
       <Section id="work" className="py-16 md:py-24">
         <div className="flex items-end justify-between mb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold">Selected Work</h2>
-          <div className="hidden md:block text-sm text-zinc-600">Representative projects I loved building</div>
+          <h2 className="text-2xl md:text-3xl font-semibold">{getTranslation(currentLanguage, 'work.title')}</h2>
+          <div className="hidden md:block text-sm text-zinc-600">{getTranslation(currentLanguage, 'work.subtitle')}</div>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((p) => (
@@ -324,17 +300,17 @@ export default function LasseMelcherSite() {
       {/* Services */}
       <Section id="services" className="py-16 md:py-24">
         <div className="flex items-end justify-between mb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold">What I Do</h2>
-          <div className="hidden md:block text-sm text-zinc-600">Hands-on, outcomes-first</div>
+          <h2 className="text-2xl md:text-3xl font-semibold">{getTranslation(currentLanguage, 'services.title')}</h2>
+          <div className="hidden md:block text-sm text-zinc-600">{getTranslation(currentLanguage, 'services.subtitle')}</div>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => (
             <Card key={s.title} className="rounded-3xl">
               <CardHeader className="flex-row items-center gap-3">
                 <div className="p-2 rounded-xl border">{s.icon}</div>
-                <CardTitle className="text-lg">{s.title}</CardTitle>
+                <CardTitle className="text-lg">{getTranslation(currentLanguage, `services.${s.title}.title`)}</CardTitle>
               </CardHeader>
-              <CardContent className="text-sm text-zinc-600">{s.blurb}</CardContent>
+              <CardContent className="text-sm text-zinc-600">{getTranslation(currentLanguage, `services.${s.blurb}.blurb`)}</CardContent>
             </Card>
           ))}
         </div>
@@ -344,8 +320,8 @@ export default function LasseMelcherSite() {
       <Section id="contact" className="py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">Let’s build something</h2>
-            <p className="text-zinc-600 mt-3">Tell me about your data challenges and goals. I’ll reply promptly with ideas and next steps.</p>
+            <h2 className="text-2xl md:text-3xl font-semibold">{getTranslation(currentLanguage, 'contact.title')}</h2>
+            <p className="text-zinc-600 mt-3">{getTranslation(currentLanguage, 'contact.subtitle')}</p>
             <div className="mt-6 space-y-2 text-sm">
               <div className="flex items-center gap-2"><MapPin className="w-4 h-4"/> <span>{CONTACT.city}</span></div>
               <div className="flex items-center gap-2"><Mail className="w-4 h-4"/> <a className="hover:font-bold transition-all" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></div>
@@ -356,14 +332,14 @@ export default function LasseMelcherSite() {
 
           <Card className="rounded-3xl">
             <CardHeader>
-              <CardTitle className="text-base">Contact form</CardTitle>
+              <CardTitle className="text-base">{getTranslation(currentLanguage, 'contact.form.title')}</CardTitle>
             </CardHeader>
             <CardContent>
               <form action={`mailto:${CONTACT.email}`} method="post" className="space-y-3">
-                <input name="name" placeholder="Your name" className="w-full border rounded-xl px-3 py-2" />
-                <input name="email" placeholder="Your email" type="email" className="w-full border rounded-xl px-3 py-2" />
-                <textarea name="message" placeholder="What would you like to achieve?" rows={5} className="w-full border rounded-xl px-3 py-2" />
-                <Button type="submit" className="rounded-2xl">Send</Button>
+                <input name="name" placeholder={getTranslation(currentLanguage, 'contact.form.name')} className="w-full border rounded-xl px-3 py-2" />
+                <input name="email" placeholder={getTranslation(currentLanguage, 'contact.form.email')} type="email" className="w-full border rounded-xl px-3 py-2" />
+                <textarea name="message" placeholder={getTranslation(currentLanguage, 'contact.form.message')} rows={5} className="w-full border rounded-xl px-3 py-2" />
+                <Button type="submit" className="rounded-2xl">{getTranslation(currentLanguage, 'contact.form.send')}</Button>
               </form>
             </CardContent>
           </Card>
@@ -374,13 +350,13 @@ export default function LasseMelcherSite() {
       <footer className="border-t py-10">
         <Section>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-600">
-            <div>© {new Date().getFullYear()} {NAME}. All rights reserved.</div>
+            <div>© {new Date().getFullYear()} {NAME}. {getTranslation(currentLanguage, 'footer.rights')}</div>
             <div className="flex gap-4">
-              <a href="#home" className="hover:opacity-70">Top</a>
-              <a href="#work" className="hover:opacity-70">Work</a>
-              <a href="#services" className="hover:opacity-70">Services</a>
-              <a href="#about" className="hover:opacity-70">About</a>
-              <a href="#contact" className="hover:opacity-70">Contact</a>
+              <a href="#home" className="hover:opacity-70">{getTranslation(currentLanguage, 'footer.top')}</a>
+              <a href="#work" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.work')}</a>
+              <a href="#services" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.services')}</a>
+              <a href="#about" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.about')}</a>
+              <a href="#contact" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.contact')}</a>
             </div>
           </div>
         </Section>
