@@ -54,29 +54,7 @@ const services = [
   },
 ];
 
-const projects = [
-  {
-    title: "Data Platform: dbt + BigQuery",
-    image: "https://placehold.co/1200x700/6b7280/6b7280",
-    tags: ["dbt", "BigQuery", "Modeling"],
-    summary:
-      "Developed a comprehensive data foundation for insurance operations that handles complex business rules, extracts insights from unstructured data, and tracks performance metrics to ensure reliable reporting and decision-making.",
-  },
-  {
-    title: "Data Orchestration & CI/CD",
-    image: "https://placehold.co/1200x700/6b7280/6b7280",
-    tags: ["Data Orchestration", "Docker", "GitLab"],
-    summary:
-      "Automated data pipeline management with continuous integration and deployment across development and production environments, including real-time monitoring and alerting.",
-  },
-  {
-    title: "Ticket System API Integration",
-    image: "https://placehold.co/1200x700/6b7280/6b7280",
-    tags: ["Ingestion", "APIs", "Data Quality"],
-    summary:
-      "Designed and implemented a comprehensive data integration solution for customer support systems, including API development, automated data ingestion, and quality assurance processes.",
-  },
-];
+
 
 const experience = [
   {
@@ -274,22 +252,39 @@ export default function LasseMelcherSite() {
           <div className="hidden md:block text-sm text-zinc-600">{getTranslation(currentLanguage, 'work.subtitle')}</div>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((p) => (
-            <Card key={p.title} className="rounded-3xl overflow-hidden">
-              <img src={p.image} alt="Project placeholder" className="w-full h-44 object-cover" />
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg">{p.title}</CardTitle>
-                <div className="flex gap-2 mt-2 flex-wrap">
-                  {p.tags.map((t) => (
-                    <Badge key={t} variant="secondary" className="rounded-full">{t}</Badge>
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent className="text-sm text-zinc-600">
-                {p.summary}
-              </CardContent>
-            </Card>
-          ))}
+          {getTranslation(currentLanguage, 'work.projects').map((p, index) => {
+            // Map each project to its specific image
+            const projectImages = [
+              "/platform.jpg",      // Data Platform: dbt + BigQuery
+              "/orchestration.jpg", // Data Orchestration & CI/CD
+              "/api.jpg"            // Ticket System API Integration
+            ];
+            
+            return (
+              <Card key={index} className="rounded-3xl overflow-hidden">
+                <img 
+                  src={projectImages[index]} 
+                  alt={`${currentLanguage === 'de' ? p.titleDe : p.title} - Project screenshot`} 
+                  className={`w-full h-44 object-cover ${
+                    index === 0 || index === 2 ? 'object-bottom' : 'object-center'
+                  }`}
+                />
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg">
+                    {currentLanguage === 'de' ? p.titleDe : p.title}
+                  </CardTitle>
+                  <div className="flex gap-2 mt-2 flex-wrap">
+                    {(currentLanguage === 'de' ? p.tagsDe : p.tags).map((t) => (
+                      <Badge key={t} variant="secondary" className="rounded-full">{t}</Badge>
+                    ))}
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sm text-zinc-600">
+                  {currentLanguage === 'de' ? p.summaryDe : p.summary}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </Section>
 
