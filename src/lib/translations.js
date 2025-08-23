@@ -247,7 +247,7 @@ export const translations = {
       },
       cicd: {
         title: "CI/CD für Daten",
-        blurb: "GitLab-Pipelines für Tests, Image-Builds und Umgebungsförderung."
+        blurb: "GitLab-Pipelines für Tests, Image-Builds und Umgebungsdeployment."
       },
       cloudArchitecture: {
         title: "Cloud-Architektur",

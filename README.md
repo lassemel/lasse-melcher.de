@@ -11,6 +11,7 @@ A modern, professional website built with React, Vite, and Tailwind CSS, showcas
 - 🎯 SEO optimized
 - 🌐 Production-ready deployment
 - 🌍 **German & English language support** - Automatic language detection and manual switching
+- 🤖 **Built with AI coding** - Completely developed using Vibe coding in Cursor code editor
 
 ## Development
 
