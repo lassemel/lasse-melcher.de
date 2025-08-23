@@ -71,7 +71,33 @@ export const translations = {
     // Work section
     work: {
       title: "Selected Work",
-      subtitle: "Representative projects I loved building"
+      subtitle: "Representative projects I loved building",
+      projects: [
+        {
+          title: "Data Platform: dbt + BigQuery",
+          titleDe: "Datenplattform: dbt + BigQuery",
+          tags: ["dbt", "BigQuery", "Modeling"],
+          tagsDe: ["dbt", "BigQuery", "Modellierung"],
+          summary: "Developed a comprehensive data foundation for insurance operations that handles complex business rules, extracts insights from unstructured data, and tracks performance metrics to ensure reliable reporting and decision-making.",
+          summaryDe: "Entwicklung einer umfassenden Datenbasis für Versicherungsbetriebe, die komplexe Geschäftsregeln handhabt, Erkenntnisse aus unstrukturierten Daten extrahiert und Leistungsmetriken verfolgt, um zuverlässige Berichterstattung und Entscheidungsfindung zu gewährleisten."
+        },
+        {
+          title: "Data Orchestration & CI/CD",
+          titleDe: "Datenorchestrierung & CI/CD",
+          tags: ["Data Orchestration", "Docker", "GitLab"],
+          tagsDe: ["Datenorchestrierung", "Docker", "GitLab"],
+          summary: "Automated data pipeline management with continuous integration and deployment across development and production environments, including real-time monitoring and alerting.",
+          summaryDe: "Automatisierte Verwaltung von Datenpipelines mit kontinuierlicher Integration und Bereitstellung in Entwicklungs- und Produktionsumgebungen, einschließlich Echtzeitüberwachung und Benachrichtigungen."
+        },
+        {
+          title: "Ticket System API Integration",
+          titleDe: "Ticket-System API-Integration",
+          tags: ["Ingestion", "APIs", "Data Quality"],
+          tagsDe: ["Ingestion", "APIs", "Datenqualität"],
+          summary: "Designed and implemented a comprehensive data integration solution for customer support systems, including API development, automated data ingestion, and quality assurance processes.",
+          summaryDe: "Entwicklung und Implementierung einer umfassenden Datenintegrationslösung für Kundensupportsysteme, einschließlich API-Entwicklung, automatisierter Datenerfassung und Qualitätssicherungsprozessen."
+        }
+      ]
     },
 
     // Services section
@@ -174,7 +200,33 @@ export const translations = {
     // Work section
     work: {
       title: "Ausgewählte Arbeiten",
-      subtitle: "Repräsentative Projekte, die ich gerne gebaut habe"
+      subtitle: "Repräsentative Projekte",
+      projects: [
+        {
+          title: "Data Platform: dbt + BigQuery",
+          titleDe: "Datenplattform: dbt + BigQuery",
+          tags: ["dbt", "BigQuery", "Modellierung"],
+          tagsDe: ["dbt", "BigQuery", "Modellierung"],
+          summary: "Entwicklung einer umfassenden Datenbasis für Versicherungsbetriebe, die komplexe Geschäftsregeln handhabt, Erkenntnisse aus unstrukturierten Daten extrahiert und Leistungsmetriken verfolgt, um zuverlässige Berichterstattung und Entscheidungsfindung zu gewährleisten.",
+          summaryDe: "Entwicklung einer umfassenden Datenbasis für Versicherungsbetriebe, die komplexe Geschäftsregeln handhabt, Erkenntnisse aus unstrukturierten Daten extrahiert und Leistungsmetriken verfolgt, um zuverlässige Berichterstattung und Entscheidungsfindung zu gewährleisten."
+        },
+        {
+          title: "Datenorchestrierung & CI/CD",
+          titleDe: "Datenorchestrierung & CI/CD",
+          tags: ["Datenorchestrierung", "Docker", "GitLab"],
+          tagsDe: ["Datenorchestrierung", "Docker", "GitLab"],
+          summary: "Automatisierte Verwaltung von Datenpipelines mit kontinuierlicher Integration und Bereitstellung in Entwicklungs- und Produktionsumgebungen, einschließlich Echtzeitüberwachung und Benachrichtigungen.",
+          summaryDe: "Automatisierte Verwaltung von Datenpipelines mit kontinuierlicher Integration und Bereitstellung in Entwicklungs- und Produktionsumgebungen, einschließlich Echtzeitüberwachung und Benachrichtigungen."
+        },
+        {
+          title: "Ticket-System API-Integration",
+          titleDe: "Ticket-System API-Integration",
+          tags: ["Ingestion", "APIs", "Datenqualität"],
+          tagsDe: ["Ingestion", "APIs", "Datenqualität"],
+          summary: "Entwicklung und Implementierung einer umfassenden Datenintegrationslösung für Kundensupportsysteme, einschließlich API-Entwicklung, automatisierter Datenerfassung und Qualitätssicherungsprozessen.",
+          summaryDe: "Entwicklung und Implementierung einer umfassenden Datenintegrationslösung für Kundensupportsysteme, einschließlich API-Entwicklung, automatisierter Datenerfassung und Qualitätssicherungsprozessen."
+        }
+      ]
     },
 
     // Services section
