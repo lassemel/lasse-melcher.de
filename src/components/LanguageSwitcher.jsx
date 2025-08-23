@@ -44,9 +44,6 @@ export const LanguageSwitcher = () => {
         >
           DE
         </span>
-        
-        {/* Subtle indicator */}
-        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-zinc-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
       </Button>
     </div>
   );
