@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/lib/LanguageContext";
 import { getTranslation } from "@/lib/translations";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { config } from "@/lib/config";
 
 // ---- Editable content (pulls from your bio) ---------------------------------
 const NAME = "Lasse Melcher";
@@ -16,12 +17,7 @@ const CURRENT_COMPANY = "";
 const LOCATION = "Berlin";
 const YEARS_EXPERIENCE = 10; // since 2015
 
-const CONTACT = {
-  email: "contact@lasse-melcher.de",
-  city: "Berlin, Germany",
-  github: "https://github.com/lassemel",
-  linkedin: "https://www.linkedin.com/in/lasse-melcher-a2768825a/",
-};
+const CONTACT = config.contact;
 
 
 
@@ -335,11 +331,43 @@ export default function LasseMelcherSite() {
               <CardTitle className="text-base">{getTranslation(currentLanguage, 'contact.form.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <form action={`mailto:${CONTACT.email}`} method="post" className="space-y-3">
-                <input name="name" placeholder={getTranslation(currentLanguage, 'contact.form.name')} className="w-full border rounded-xl px-3 py-2" />
-                <input name="email" placeholder={getTranslation(currentLanguage, 'contact.form.email')} type="email" className="w-full border rounded-xl px-3 py-2" />
-                <textarea name="message" placeholder={getTranslation(currentLanguage, 'contact.form.message')} rows={5} className="w-full border rounded-xl px-3 py-2" />
-                <Button type="submit" className="rounded-2xl">{getTranslation(currentLanguage, 'contact.form.send')}</Button>
+              <form 
+                action={config.formspreeEndpoint} 
+                method="POST" 
+                className="space-y-3"
+                onSubmit={(e) => {
+                  // Optional: Add custom validation or handling here
+                  console.log('Form submitted');
+                }}
+              >
+                <input 
+                  name="name" 
+                  placeholder={getTranslation(currentLanguage, 'contact.form.name')} 
+                  required 
+                  className="w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent" 
+                />
+                <input 
+                  name="email" 
+                  placeholder={getTranslation(currentLanguage, 'contact.form.email')} 
+                  type="email" 
+                  required 
+                  className="w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent" 
+                />
+                <textarea 
+                  name="message" 
+                  placeholder={getTranslation(currentLanguage, 'contact.form.message')} 
+                  rows={5} 
+                  required 
+                  className="w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent resize-none" 
+                />
+                <Button type="submit" className="rounded-2xl w-full">
+                  {getTranslation(currentLanguage, 'contact.form.send')}
+                </Button>
+                
+                {/* Formspree will automatically show success/error messages here */}
+                <div className="text-xs text-zinc-500 text-center">
+                  {getTranslation(currentLanguage, 'contact.form.submissionNote')}
+                </div>
               </form>
             </CardContent>
           </Card>

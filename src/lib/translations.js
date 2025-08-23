@@ -113,7 +113,8 @@ export const translations = {
         name: "Your name",
         email: "Your email", 
         message: "What would you like to achieve?",
-        send: "Send"
+        send: "Send",
+        submissionNote: "After submitting, you will be redirected to a confirmation page."
       }
     },
 
@@ -215,7 +216,8 @@ export const translations = {
         name: "Ihr Name",
         email: "Ihre E-Mail",
         message: "Was möchten Sie erreichen?",
-        send: "Senden"
+        send: "Senden",
+        submissionNote: "Nach dem Absenden werden Sie auf eine Bestätigungsseite weitergeleitet."
       }
     },
 
