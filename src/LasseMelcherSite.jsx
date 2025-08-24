@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Database, LineChart, Cog, Cloud, Boxes, GitBranch, ShieldCheck, Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Database, LineChart, Cog, Cloud, Boxes, GitBranch, ShieldCheck, Mail, MapPin, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -145,6 +145,16 @@ export default function LasseMelcherSite() {
             <a href="#contact" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.contact')}</a>
           </div>
           <div className="flex items-center gap-2">
+            <a 
+              href="/Lasse-Melcher-CV-Resume-lite.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              download="Lasse-Melcher-CV.pdf"
+              className="hidden md:flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors px-3 py-2 rounded-lg hover:bg-blue-50 border border-blue-200 hover:border-blue-300"
+            >
+              <Download className="w-4 h-4" />
+              {getTranslation(currentLanguage, 'about.cvDownload')}
+            </a>
             <LanguageSwitcher />
             <a href="#contact" className="hidden md:block">
               <Button className="rounded-2xl">{getTranslation(currentLanguage, 'nav.letsTalk')}</Button>
@@ -221,6 +231,8 @@ export default function LasseMelcherSite() {
                 ))}
               </div>
             </div>
+            
+
           </div>
 
           <div className="space-y-6">
