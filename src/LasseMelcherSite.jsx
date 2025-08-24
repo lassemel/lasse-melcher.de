@@ -149,16 +149,13 @@ export default function LasseMelcherSite() {
               href="/Lasse-Melcher-CV-Resume-lite.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              download="Lasse-Melcher-CV.pdf"
+              download="Lasse-Melcher-CV-Resume-lite.pdf"
               className="hidden md:flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors px-3 py-2 rounded-lg hover:bg-blue-50 border border-blue-200 hover:border-blue-300"
             >
               <Download className="w-4 h-4" />
               {getTranslation(currentLanguage, 'about.cvDownload')}
             </a>
             <LanguageSwitcher />
-            <a href="#contact" className="hidden md:block">
-              <Button className="rounded-2xl">{getTranslation(currentLanguage, 'nav.letsTalk')}</Button>
-            </a>
           </div>
         </nav>
       </header>
