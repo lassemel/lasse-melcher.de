@@ -150,7 +150,7 @@ export default function LasseMelcherSite() {
               target="_blank" 
               rel="noopener noreferrer"
               download="Lasse-Melcher-CV-Resume-lite.pdf"
-              className="hidden md:flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors px-3 py-2 rounded-lg hover:bg-blue-50 border border-blue-200 hover:border-blue-300"
+              className="hidden md:flex items-center gap-2 text-sm text-orange-600 hover:text-orange-700 transition-colors px-3 py-2 rounded-lg hover:bg-orange-50 border border-orange-200 hover:border-orange-300"
             >
               <Download className="w-4 h-4" />
               {getTranslation(currentLanguage, 'about.cvDownload')}
