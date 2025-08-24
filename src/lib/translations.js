@@ -65,7 +65,11 @@ export const translations = {
         "Enabled self-serve analytics with Power BI and Metabase dashboards",
         "Mentored teams on data quality, observability, and best practices",
         "Accelerated delivery with state-of-the-art AI tools for code generation and optimization"
-      ]
+      ],
+      cvDownload: "Download CV",
+      cvDownloadDe: "CV herunterladen",
+      cvDescription: "Get my full professional background and experience",
+      cvDescriptionDe: "Mein vollständiger beruflicher Werdegang und Erfahrungen"
     },
 
     // Work section
@@ -194,7 +198,9 @@ export const translations = {
         "Self-Service-Analysen mit Power BI und Metabase-Dashboards ermöglicht",
         "Teams zu Datenqualität, Beobachtbarkeit und bewährten Praktiken geschult",
         "Lieferung mit modernsten KI-Tools für Codegenerierung und Optimierung beschleunigt"
-      ]
+      ],
+      cvDownload: "CV herunterladen",
+      cvDescription: "Mein vollständiger beruflicher Werdegang und Erfahrungen"
     },
 
     // Work section
