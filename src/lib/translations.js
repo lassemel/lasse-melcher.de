@@ -1,27 +1,27 @@
 const skills = [
+  "Data Strategy & Architecture",
   "Analytics Engineering (dbt)",
-  "SQL & Data Modeling",
-  "Python & PySpark",
-  "Data Orchestration",
-  "Docker & CI/CD (GitLab)",
-  "Cloud: GCP, AWS, Databricks",
-  "Data Warehousing & Lakes",
-  "Power BI & Metabase",
-  "Data Quality & Enablement",
-  "Linux & Shell Scripting",
+  "Team Leadership & Mentoring",
+  "Data Quality & Governance",
+  "Cloud Architecture (GCP, AWS)",
+  "CI/CD & DevOps Practices",
+  "Data Platform Design",
+  "Performance Optimization",
+  "Stakeholder Management",
+  "Technical Roadmapping",
 ];
 
 const skillsDe = [
+  "Datenstrategie & Architektur",
   "Analytics Engineering (dbt)",
-  "SQL & Datenmodellierung",
-  "Python & PySpark",
-  "Datenorchestrierung",
-  "Docker & CI/CD (GitLab)",
-  "Cloud: GCP, AWS, Databricks",
-  "Data Warehousing & Data Lakes",
-  "Power BI & Metabase",
-  "Datenqualität & Aktivierung",
-  "Linux & Shell-Skripting",
+  "Teamführung & Mentoring",
+  "Datenqualität & Governance",
+  "Cloud-Architektur (GCP, AWS)",
+  "CI/CD & DevOps-Praktiken",
+  "Datenplattform-Design",
+  "Performance-Optimierung",
+  "Stakeholder-Management",
+  "Technische Roadmap-Planung",
 ];
 
 export const translations = {
@@ -59,12 +59,12 @@ export const translations = {
       skillsList: skills,
       keyHighlights: "Key Highlights",
       highlights: [
-        "10+ years building data systems across telecom, insurance, startups, and enterprise",
+        "10+ years building data systems across telecom, insurance and startups",
         "Led analytics engineering transformations with dbt and modern data stacks",
         "Implemented CI/CD for data teams with Docker and GitLab automation",
-        "Enabled self-serve analytics with Power BI and Metabase dashboards",
+        "Enabled self-serve analytics with Looker and Metabase dashboards",
         "Mentored teams on data quality, observability, and best practices",
-        "Accelerated delivery with state-of-the-art AI tools for code generation and optimization"
+        "Accelerated delivery with state-of-the-art AI tools like Cursor Editor and Altimate AI for code generation and optimization"
       ],
       cvDownload: "Download CV",
       cvDownloadDe: "CV herunterladen",
@@ -192,12 +192,12 @@ export const translations = {
       skillsList: skillsDe,
       keyHighlights: "Wichtige Highlights",
       highlights: [
-        "10+ Jahre Erfahrung beim Aufbau von Datensystemen in Telekommunikation, Versicherungen, Startups und Unternehmen",
-        "Analytics Engineering-Transformationen mit dbt und modernen Datenstacks geleitet",
+        "10+ Jahre Erfahrung beim Aufbau von Datensystemen in Telekommunikation, Versicherungen und Startups",
+        "Analytics Engineering-Transformationen mit dbt und modern Datastack geleitet",
         "CI/CD für Daten-Teams mit Docker und GitLab-Automatisierung implementiert",
-        "Self-Service-Analysen mit Power BI und Metabase-Dashboards ermöglicht",
+        "Self-Service-Analysen mit Looker und Metabase-Dashboards ermöglicht",
         "Teams zu Datenqualität, Beobachtbarkeit und bewährten Praktiken geschult",
-        "Lieferung mit modernsten KI-Tools für Codegenerierung und Optimierung beschleunigt"
+        "Nutzung von modernsten KI-Tools wie Cursor Editor und Altimate AI für Codegenerierung und Optimierung"
       ],
       cvDownload: "CV herunterladen",
       cvDescription: "Mein vollständiger beruflicher Werdegang und Erfahrungen"
