@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/lib/LanguageContext";
 import { getTranslation } from "@/lib/translations";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import Impressum from "@/components/Impressum";
 import { config } from "@/lib/config";
 
 // ---- Editable content (pulls from your bio) ---------------------------------
@@ -131,6 +132,29 @@ const Pill = ({ children }) => (
 // ---- Page -------------------------------------------------------------------
 export default function LasseMelcherSite() {
   const { currentLanguage } = useLanguage();
+  const [showImpressum, setShowImpressum] = React.useState(false);
+
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === '#impressum') {
+      setShowImpressum(true);
+    }
+  }, []);
+
+  const handleImpressumClick = (e) => {
+    e.preventDefault();
+    setShowImpressum(true);
+    window.history.pushState(null, '', '#impressum');
+  };
+
+  const handleBackHome = () => {
+    setShowImpressum(false);
+    window.history.pushState(null, '', '#home');
+  };
+
+  if (showImpressum) {
+    return <Impressum onBackHome={handleBackHome} />;
+  }
   
   return (
     <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white">
@@ -389,6 +413,7 @@ export default function LasseMelcherSite() {
               <a href="#services" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.services')}</a>
               <a href="#about" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.about')}</a>
               <a href="#contact" className="hover:opacity-70">{getTranslation(currentLanguage, 'nav.contact')}</a>
+              <a href="#impressum" onClick={handleImpressumClick} className="hover:opacity-70">Impressum</a>
             </div>
           </div>
         </Section>

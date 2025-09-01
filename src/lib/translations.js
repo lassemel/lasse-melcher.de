@@ -286,7 +286,25 @@ export const translations = {
     },
 
     // Language switcher
-    language: "Sprache"
+    language: "Sprache",
+
+    // Impressum
+    impressum: {
+      title: "Impressum",
+      tmgReference: "Angaben gemäß § 5 TMG",
+      responsiblePerson: "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:",
+      address: {
+        street: "c/o Autorenglück #67553",
+        street2: "Albert-Einstein-Str. 47",
+        city: "02977 Hoyerswerda",
+        country: "Deutschland"
+      },
+      contact: "Kontaktdaten",
+      email: "E-Mail",
+      website: "Website",
+      freeText: "Die Inhalte meiner Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen.",
+      backToHome: "Zurück zur Startseite"
+    }
   }
 };
 
